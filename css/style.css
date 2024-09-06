@@ -10,6 +10,7 @@ ul{ list-style: none; padding: 0;}
 label{ display: inline-block;}
 
 html{
+    scroll-behavior: smooth;
     font-size:15px;
     --ff: "Montserrat", sans-serif;
     --kus:"Kaushan Script", cursive;
@@ -78,7 +79,7 @@ nav a:hover{ color: var(--yel); border-block-color: var(--yel);}
 .pager b{ font-size: 24px;}
 .pager small{ font-size: 18px;}
 .bar{ height: 3px; background: #fff; margin-bottom: 25px; position: relative;}
-.bar.active::before{ content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 0; background: var(--red); animation: changebar 4s linear 1;}
+.bar.active::before{ content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 0; background: var(--red); animation: changebar 4s linear 1 both;}
 @keyframes changebar{
     0%{ width: 0;}
     100%{ width: 100%;}
@@ -121,7 +122,7 @@ section .para{ font: 15px/24px var(--rob); color: #999;}
 
 
 .wrap-6{ background: #fff; padding: 100px 0 120px; text-align: center; color: #333; }
-.services{ margin-top: 80px;}
+.wrap-6 .services{ margin-top: 80px;}
 .accordion li{ margin-bottom: 10px; border: 1px solid #e5e5e5; }
 .accordion a{ display: block; padding: 14px; font-size: 14px; color: #333; border-bottom: 1px solid #e5e5e5 ; }
 .accordion a img{ vertical-align: middle; margin-right: 15px; }
@@ -131,6 +132,53 @@ section .para{ font: 15px/24px var(--rob); color: #999;}
 .object{ height: 100%; background: aqua; }
 .object img{ height: 100%; width: 100%; object-fit: cover; object-position: center center; }
 
+
+.wrap-7{ background: #f8f8f8; padding: 70px 0;}
+.reviews{ padding: 0 112px; position: relative;}
+.review{ display: none; }
+.review.active{ display: block }
+.pic{ width: 150px; height: 150px; flex-shrink: 0;  border: 2px solid #95e1d3; display: grid; place-items: center; margin-right: 4rem;}
+.wrap-7 .sep{ float: left; margin: 18px 10px;}
+.wrap-7 blockquote{ font: 300 italic 24px/36px var(--rob); color: #999;}
+.wrap-7 footer{ font-family: var(--kus);}
+.controls{ position: absolute; border: none; background: none; color: #ccc; font-size: 24px; top: 50%; transform: translateY(-50%);}
+.prev{ left: 0;}
+.next{ right: 0;}
+
+
+
+.wrap-8{ background: #fff; padding: 90px 0 110px; text-align: center; color: #333;}
+.team{ margin-top: 80px;}
+.team-pic{ position: relative; margin-bottom: 25px;}
+.over{position: absolute; inset: 0; background: var(--grad); opacity: 0; visibility: hidden; transition: .5s; }
+.team:hover .over{ opacity: 1; visibility: visible; transform: translate(-10px, -10px); box-shadow: 10px 10px var(--green); }
+.social li:not(:first-child){ margin-left: 1px;  }
+.social a{ font-size: 28px; display: block; width: 56px; line-height: 56px; background: var(--yel); color: var(--red); }
+.social a:hover{ background: var(--red); color: var(--yel);}
+
+
+.wrap-9{ padding: 50px 0; background: #f8f8f8; text-align: center; }
+
+
+.wrap-10{ background: #fff; padding: 90px 0 110px; text-align: center; color: #333;}
+
+.wrap-11{ background: var(--green); }
+.wrap-11 .flex{ flex-flow: row wrap;}
+.wrap-11 .col{ flex: 1 0 25%; max-width: 25%; }
+
+
+
+.wrap-12{ background: #fff; padding: 70px 0;}
+.reviews{ padding: 0 112px; position: relative;}
+.review{ display: none; }
+.review.active{ display: block }
+.pic{ width: 150px; height: 150px; flex-shrink: 0;  border: 2px solid #95e1d3; display: grid; place-items: center; margin-right: 4rem;}
+.wrap-12 .sep{ float: left; margin: 18px 10px;}
+.wrap-12 blockquote{ font: 300 italic 24px/36px var(--rob); color: #999;}
+.wrap-12 footer{ font-family: var(--kus);}
+.controls{ position: absolute; border: none; background: none; color: #ccc; font-size: 24px; top: 50%; transform: translateY(-50%);}
+.prev{ left: 0;}
+.next{ right: 0;}
 
 
 /* responsive */
@@ -145,6 +193,7 @@ section .para{ font: 15px/24px var(--rob); color: #999;}
     nav li{ margin: 0 15px;}
     .slide .banner-text{ font-size: 100px;}
     .wrap-3 b{ font-size: 40px;}
+    .wrap-11 .col{ flex: 1 0 50%; max-width: 50%; }
 }
 
 
@@ -166,4 +215,6 @@ section .para{ font: 15px/24px var(--rob); color: #999;}
     .slide{ padding: 5rem 0;}
     .col-auto{ flex-basis: 33.3%; max-width: 50%;}
     .iphone{ width: 50%; }
+    :is(.wrap-7, .wrap-12) .flex{ flex-flow: column; }
+    .reviews{ padding: 0 40px;}
 }
